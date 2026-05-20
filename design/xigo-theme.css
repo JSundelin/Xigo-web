@@ -1,0 +1,275 @@
+/* ============================================
+   XIGO Design System — v2.0 (xigo.se)
+   Slate-teal corporate palette (distinct from Nordic navy)
+   ============================================ */
+
+:root {
+  /* Brand */
+  --brand-primary: #1e3d4f;
+  --brand-accent: #2e5e7e;
+  --text-primary: #1a1a1a;
+  --text-secondary: #595959;
+  --surface: #ffffff;
+  --surface-muted: #f5f7fa;
+  --border: #e1e5eb;
+  --success: #1b7f4f;
+
+  /* Semantic mapping */
+  --color-background: var(--surface-muted);
+  --color-background-alt: var(--surface);
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
+  --color-foreground: var(--text-primary);
+  --color-foreground-muted: var(--text-secondary);
+  --color-foreground-subtle: #7a7a7a;
+  --color-accent: var(--brand-accent);
+  --color-accent-hover: #234d66;
+  --color-accent-subtle: rgba(46, 94, 126, 0.1);
+  --color-accent-muted: #4a7a96;
+  --color-border: var(--border);
+  --color-border-muted: rgba(225, 229, 235, 0.8);
+  --color-cta-band: var(--brand-primary);
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 1px rgba(15, 23, 42, 0.06);
+  --shadow-2: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-sm: var(--shadow-1);
+  --shadow-md: var(--shadow-2);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.1);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-section: 6rem;
+  --space-section-sm: 3.5rem;
+  --container-max: 1200px;
+  --reading-max: 42rem;
+
+  /* Typography */
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-heading: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  --text-h1-size: 3.5rem;
+  --text-h1-lh: 4rem;
+  --text-h2-size: 2.5rem;
+  --text-h2-lh: 3rem;
+  --text-h3-size: 1.75rem;
+  --text-h3-lh: 2.25rem;
+  --text-h4-size: 1.375rem;
+  --text-h4-lh: 1.875rem;
+  --text-body-lg-size: 1.125rem;
+  --text-body-lg-lh: 1.875rem;
+  --text-body-size: 1rem;
+  --text-body-lh: 1.625rem;
+  --text-caption-size: 0.875rem;
+  --text-caption-lh: 1.375rem;
+
+  /* Animation */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-h1-size: 2.25rem;
+    --text-h1-lh: 2.75rem;
+    --text-h2-size: 1.75rem;
+    --text-h2-lh: 2.25rem;
+    --space-section: var(--space-section-sm);
+  }
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-foreground);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-lh);
+}
+
+h2 {
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-lh);
+}
+
+h3 {
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-lh);
+}
+
+h4 {
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-lh);
+}
+
+p {
+  color: var(--color-foreground-muted);
+  max-width: var(--reading-max);
+}
+
+.text-body-lg {
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-lh);
+}
+
+.text-caption {
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-lh);
+  color: var(--text-secondary);
+}
+
+.prose {
+  max-width: var(--reading-max);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--brand-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 500;
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-accent-subtle);
+  color: var(--color-foreground);
+}
+
+@media (max-width: 640px) {
+  button,
+  a[role="button"],
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-muted);
+}
+
+.bg-subtle {
+  background: var(--color-background-alt);
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--surface) 0%,
+    var(--surface-muted) 60%,
+    rgba(46, 94, 126, 0.06) 100%
+  );
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s var(--ease-out) forwards;
+  opacity: 0;
+}
+
+.animation-delay-100 { animation-delay: 100ms; }
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-300 { animation-delay: 300ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+  }
+}
